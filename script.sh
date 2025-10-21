@@ -8,7 +8,7 @@ COMPOSE_FILE="$CONFIG_DIR/docker-compose.yml"
 ENV_FILE="$CONFIG_DIR/.env"
 CF_TOKEN=""
 
-FETCH_REPO="muttehitler/nobetnode-cf"
+FETCH_REPO="muttehit/nobetnode-cf"
 SCRIPT_URL="https://github.com/$FETCH_REPO/raw/main/script.sh"
 
 colorized_echo() {
@@ -126,8 +126,8 @@ install_nobetnode_cf_script() {
 
 install_nobetnode_cf() {
     # Fetch releases
-    FILES_URL_PREFIX="https://raw.githubusercontent.com/muttehitler/nobetnode-cf/main"
-	COMPOSE_FILES_URL="https://raw.githubusercontent.com/muttehitler/nobetnode-cf/main"
+    FILES_URL_PREFIX="https://raw.githubusercontent.com/muttehit/nobetnode-cf/main"
+	COMPOSE_FILES_URL="https://raw.githubusercontent.com/muttehit/nobetnode-cf/main"
   	nightly=$1
   
     mkdir -p "$DATA_DIR"
@@ -138,7 +138,7 @@ install_nobetnode_cf() {
     colorized_echo green "File saved in $CONFIG_DIR/docker-compose.yml"
 	if [ "$nightly" = true ]; then
 	    colorized_echo red "setting compose tag to nightly."
-	 	sed -ri "s/(ghcr.io\/muttehitler\/nobetnode-cf:)latest/\1nightly/g" $CONFIG_DIR/docker-compose.yml
+	 	sed -ri "s/(ghcr.io\/muttehit\/nobetnode-cf:)latest/\1nightly/g" $CONFIG_DIR/docker-compose.yml
 	fi
  
     colorized_echo blue "Fetching example .env file"

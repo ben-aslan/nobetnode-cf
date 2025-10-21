@@ -1,6 +1,6 @@
 services:
   nobetnode-cf:
-    image: ghcr.io/muttehitler/nobetnode-cf:latest
+    image: ghcr.io/muttehit/nobetnode-cf:latest
     network_mode: host
     env_file: .env
     volumes:
